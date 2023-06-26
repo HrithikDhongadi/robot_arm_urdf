@@ -18,7 +18,7 @@
         ixz="-1.12902817717444E-18"
         iyy="0.0218937433303854"
         iyz="3.14051558912412E-19"
-        izz="0.0270227638998469" />
+        izz="0.027022763899847" />
     </inertial>
     <visual>
       <origin
@@ -86,7 +86,7 @@
   </link>
   <joint
     name="lowerLinkJoint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 0.05"
       rpy="0 0 0" />
@@ -97,8 +97,8 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-3.14"
+      upper="3.14"
       effort="1"
       velocity="1" />
   </joint>
@@ -115,7 +115,7 @@
         ixy="-3.8524022604401E-08"
         ixz="-1.02921856674873E-08"
         iyy="0.00493100525312466"
-        iyz="-2.32738380137631E-09"
+        iyz="-2.32738380126302E-09"
         izz="0.0490843594712315" />
     </inertial>
     <visual>
@@ -155,9 +155,9 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="0"
-      upper="0"
-      effort="1"
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
       velocity="1" />
   </joint>
   <link
@@ -213,8 +213,8 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-3.14"
+      upper="3.14"
       effort="1"
       velocity="1" />
   </joint>
