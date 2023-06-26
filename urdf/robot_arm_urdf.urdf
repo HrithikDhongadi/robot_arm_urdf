@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot_arm_urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="4.96292964268423E-18 -2.15674096895111E-19 -0.00352234162793497"
+        rpy="0 0 0" />
+      <mass
+        value="11.1555199183654" />
+      <inertia
+        ixx="0.0218937433303854"
+        ixy="-5.38277959015113E-35"
+        ixz="-1.12902817717444E-18"
+        iyy="0.0218937433303854"
+        iyz="3.14051558912412E-19"
+        izz="0.0270227638998469" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="lower_link">
+    <inertial>
+      <origin
+        xyz="0.00283185829324434 -2.10055247599759E-07 0.152167760987996"
+        rpy="0 0 0" />
+      <mass
+        value="2.60508217101264" />
+      <inertia
+        ixx="0.0207789183613322"
+        ixy="3.48504162394541E-10"
+        ixz="-0.000721252485633219"
+        iyy="0.0210484955522847"
+        iyz="-4.53564565539121E-10"
+        izz="0.00352592265915018" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes/lower_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.32" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes/lower_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lowerLinkJoint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.05"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lower_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="mid_Link">
+    <inertial>
+      <origin
+        xyz="-1.61239824175568E-07 0.149999962771169 0.0558191802212365"
+        rpy="0 0 0" />
+      <mass
+        value="3.52947647053235" />
+      <inertia
+        ixx="0.0496036296964444"
+        ixy="-3.8524022604401E-08"
+        ixz="-1.02921856674873E-08"
+        iyy="0.00493100525312466"
+        iyz="-2.32738380137631E-09"
+        izz="0.0490843594712315" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes/mid_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.32" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes/mid_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="midLinkJoint"
+    type="revolute">
+    <origin
+      xyz="0.06 0 0.25"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="lower_link" />
+    <child
+      link="mid_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="top_Link">
+    <inertial>
+      <origin
+        xyz="-2.72034678067359E-07 0.0880276673076478 -0.00302801629877976"
+        rpy="0 0 0" />
+      <mass
+        value="2.43709022354304" />
+      <inertia
+        ixx="0.0173051047934003"
+        ixy="-4.64973792935319E-09"
+        ixz="-7.74950758251056E-10"
+        iyy="0.00331438215950231"
+        iyz="-0.000648915724875799"
+        izz="0.017036976743881" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes/top_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes/top_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="topLinkJoint"
+    type="revolute">
+    <origin
+      xyz="0 0.3 -0.06"
+      rpy="3.1416 0 0" />
+    <parent
+      link="mid_Link" />
+    <child
+      link="top_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="1"
+      velocity="1" />
+  </joint>
+</robot>
